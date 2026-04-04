@@ -18,6 +18,11 @@ def complete_task(task: dict) -> dict:
     return {**task, "done": True, "completed_at": datetime.now().isoformat()}
 
 
+def subtract(a: float, b: float) -> float:
+    """Return the difference of a and b."""
+    return a - b
+
+
 def format_task(task: dict) -> str:
     """Format a task for display."""
     status = "✅" if task["done"] else "⬜"
