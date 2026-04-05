@@ -8,14 +8,14 @@ def create_task(title: str, priority: int = 1) -> dict:
     return {
         "title": title,
         "priority": priority,
-        "created_at": datetime.now().isoformat(),
+        "created_at": datetime.utcnow().isoformat(),
         "done": False,
     }
 
 
 def complete_task(task: dict) -> dict:
     """Mark a task as completed."""
-    return {**task, "done": True, "completed_at": datetime.now().isoformat()}
+    return {**task, "done": True, "completed_at": datetime.utcnow().isoformat()}
 
 
 def subtract(a: float, b: float) -> float:
